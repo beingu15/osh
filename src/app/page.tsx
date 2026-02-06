@@ -55,6 +55,7 @@ const services = [
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const artistImage = PlaceHolderImages.find(img => img.id === "artist-tinu")?.imageUrl || "";
+  const heroPoster = PlaceHolderImages.find(img => img.id === "hero-main")?.imageUrl || "";
 
   useGSAP(() => {
     // Hero Animations
@@ -144,17 +145,19 @@ export default function Home() {
     <div ref={containerRef}>
       <Navbar />
       <main>
-        {/* Hero Section with Video Background */}
-        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
+        {/* Hero Section with Video Background and Poster Fallback */}
+        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-foreground">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover brightness-[0.6]"
+            preload="auto"
+            poster={heroPoster}
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.5] transition-opacity duration-1000"
           >
             <source 
-              src="https://assets.mixkit.co/videos/preview/mixkit-fashion-model-in-a-golden-dress-posing-42450-large.mp4" 
+              src="/wedding.mp4" 
               type="video/mp4" 
             />
             Your browser does not support the video tag.
