@@ -43,31 +43,36 @@ const services = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(img => img.id === "hero-main");
   const artistImage = PlaceHolderImages.find(img => img.id === "artist-tinu")?.imageUrl || "";
 
   return (
     <>
       <Navbar />
       <main>
-        {/* Hero Section */}
+        {/* Hero Section with Video Background */}
         <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
-          <Image
-            src={heroImage?.imageUrl || "https://picsum.photos/seed/osh1/1920/1080"}
-            alt="The OSH Atelier"
-            fill
-            className="object-cover brightness-[0.7]"
-            priority
-            data-ai-hint="luxury makeup"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.6]"
+          >
+            <source 
+              src="https://assets.mixkit.co/videos/preview/mixkit-fashion-model-in-a-golden-dress-posing-42450-large.mp4" 
+              type="video/mp4" 
+            />
+            Your browser does not support the video tag.
+          </video>
+          
           <div className="relative z-10 text-center text-white px-6">
-            <h1 className="font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg">
+            <h1 className="font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-1000">
               THE OSH <span className="text-primary italic">ATELIER</span>
             </h1>
-            <p className="font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12">
+            <p className="font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
               Where Artistry Meets Elegance. By Tinu.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-10 h-14">
                 <Link href="/booking">Book Experience</Link>
               </Button>
@@ -76,7 +81,8 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+          
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block z-10">
             <div className="w-[1px] h-20 bg-primary/60"></div>
           </div>
         </section>
