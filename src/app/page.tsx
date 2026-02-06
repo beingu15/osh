@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
+        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
           <Image
             src={heroImage?.imageUrl || "https://picsum.photos/seed/osh1/1920/1080"}
             alt="The OSH Atelier"
