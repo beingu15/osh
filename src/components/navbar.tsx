@@ -3,8 +3,15 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Instagram, Facebook } from "lucide-react";
+import { Menu, Instagram, Facebook } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -56,32 +63,43 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-background border-b border-primary/20 md:hidden animate-in slide-in-from-top duration-300">
-          <div className="flex flex-col p-6 space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="font-headline text-lg tracking-widest hover:text-primary transition-colors uppercase"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+        {/* Mobile Menu - Drawer */}
+        <div className="md:hidden">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <button className="text-foreground p-2" aria-label="Open navigation menu">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-background border-primary/20 p-0 sm:max-w-xs">
+              <SheetHeader className="p-6 border-b border-primary/10">
+                <SheetTitle className="font-headline text-xl tracking-widest text-left uppercase">
+                  THE OSH <span className="text-primary italic">ATELIER</span>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col p-6 space-y-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="font-headline text-xl tracking-[0.2em] hover:text-primary transition-colors uppercase"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <div className="pt-8 border-t border-primary/10">
+                  <p className="font-headline text-[10px] tracking-[0.3em] text-foreground/40 uppercase mb-6">Connect with us</p>
+                  <div className="flex items-center space-x-6">
+                    <Instagram className="h-6 w-6 text-primary hover:text-accent cursor-pointer transition-colors" />
+                    <Facebook className="h-6 w-6 text-primary hover:text-accent cursor-pointer transition-colors" />
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

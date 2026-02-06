@@ -81,23 +81,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brand Philosophy */}
-        <section className="py-24 px-6 lg:px-12 bg-background">
-          <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-primary text-sm font-headline tracking-widest mb-4 uppercase">The Atelier Philosophy</h2>
-            <h3 className="font-headline text-3xl md:text-5xl mb-8 leading-tight">Elevating Traditional Crafts through Modern Sophistication</h3>
-            <p className="font-body text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-              The OSH Atelier is more than a beauty studio; it is a sanctuary of artistic expression. Led by Tinu's visionary approach, we celebrate the ritual of adornment, ensuring every client feels like a masterpiece.
-            </p>
-          </div>
-        </section>
-
-        {/* Artist Section - Integrated from About page */}
+        {/* Artist Section - Positioned early for impact with image leading the layout */}
         <section className="py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Image Column - Now first for all breakpoints */}
-              <div className="relative">
+              {/* Image Column - Always first for start-of-section priority */}
+              <div className="relative order-1">
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
                     <Image
@@ -113,7 +102,7 @@ export default function Home() {
               </div>
               
               {/* Text Column */}
-              <div className="space-y-8">
+              <div className="space-y-8 order-2">
                 <span className="font-headline text-primary tracking-[0.3em] text-sm uppercase">The Creative Visionary</span>
                 <h2 className="font-headline text-4xl md:text-6xl leading-tight uppercase">
                   MEET <span className="italic text-primary">TINU</span>
@@ -138,6 +127,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Brand Philosophy */}
+        <section className="py-24 px-6 lg:px-12 bg-background">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-primary text-sm font-headline tracking-widest mb-4 uppercase">The Atelier Philosophy</h2>
+            <h3 className="font-headline text-3xl md:text-5xl mb-8 leading-tight">Elevating Traditional Crafts through Modern Sophistication</h3>
+            <p className="font-body text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
+              The OSH Atelier is more than a beauty studio; it is a sanctuary of artistic expression. Led by Tinu's visionary approach, we celebrate the ritual of adornment, ensuring every client feels like a masterpiece.
+            </p>
           </div>
         </section>
 
