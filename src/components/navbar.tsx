@@ -4,11 +4,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Inspiration", href: "/blog" },

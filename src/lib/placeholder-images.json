@@ -59,6 +59,12 @@
       "description": "Behind the scenes at a fashion shoot",
       "imageUrl": "https://images.unsplash.com/photo-1745152049794-6d797afcdada?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXNoaW9uJTIwcGhvdG9zaG9vdHxlbnwwfHx8fDE3NzAzODM5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fashion photoshoot"
+    },
+    {
+      "id": "artist-tinu",
+      "description": "Portrait of the artist Tinu in her studio",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwMzgzOTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion portrait"
     }
   ]
 }
