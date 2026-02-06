@@ -93,14 +93,6 @@ export default function About() {
         </section>
       </main>
       <Footer />
-      
-      <style jsx global>{`
-        @keyframes blob {
-          0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-          50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-          100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        }
-      `}</style>
     </>
   );
 }
