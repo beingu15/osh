@@ -2,6 +2,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { FloatingActions } from "@/components/floating-actions";
 
 export const metadata: Metadata = {
   title: 'The OSH Atelier | Luxury Makeup & Costume Design',
@@ -22,6 +23,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
         {children}
+        <FloatingActions />
         <Toaster />
       </body>
     </html>
