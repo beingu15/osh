@@ -7,12 +7,24 @@ export function Footer() {
     <footer className="bg-foreground text-background py-16 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
-          <h2 className="font-headline text-3xl tracking-widest mb-6">
-            THE OSH <span className="text-primary italic">ATELIER</span>
-          </h2>
-          <p className="max-w-md text-background/70 font-body text-lg leading-relaxed mb-8">
-            Defining luxury through professional makeup and artistic costume design. Every creation is a testament to the atelier's dedication to craftsmanship and beauty.
-          </p>
+          <div className="mb-8">
+            <div className="flex flex-col items-start leading-none mb-4">
+              <div className="flex items-baseline">
+                <span className="font-headline text-3xl lg:text-4xl tracking-tighter text-background">
+                  THE OSH
+                </span>
+                <span className="font-headline text-[10px] lg:text-[12px] uppercase tracking-[0.4em] ml-3 text-primary border-l border-primary/30 pl-3">
+                  Atelier
+                </span>
+              </div>
+              <span className="font-body italic text-base lg:text-lg text-background/60 mt-1 ml-1">
+                by Tinu
+              </span>
+            </div>
+            <p className="max-w-md text-background/70 font-body text-lg leading-relaxed mt-6">
+              Defining luxury through professional makeup and artistic costume design. Every creation is a testament to the atelier's dedication to craftsmanship and beauty.
+            </p>
+          </div>
           <div className="flex space-x-6">
             <Instagram className="h-6 w-6 text-primary hover:text-primary/80 transition-colors cursor-pointer" />
             <Facebook className="h-6 w-6 text-primary hover:text-primary/80 transition-colors cursor-pointer" />
