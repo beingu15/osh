@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, Instagram, Facebook } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 import {
   Sheet,
   SheetContent,
@@ -40,20 +41,8 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="group">
-          <div className="flex flex-col items-start leading-none">
-            <div className="flex items-baseline">
-              <span className="font-headline text-2xl lg:text-3xl tracking-tighter text-foreground group-hover:text-primary transition-colors">
-                THE OSH
-              </span>
-              <span className="font-headline text-[8px] lg:text-[10px] uppercase tracking-[0.3em] ml-2 text-primary vertical-text border-l border-primary/20 pl-2">
-                Atelier
-              </span>
-            </div>
-            <span className="font-body italic text-xs lg:text-sm text-foreground/60 -mt-0.5 ml-1">
-              by Tinu
-            </span>
-          </div>
+        <Link href="/">
+          <Logo />
         </Link>
 
         {/* Desktop Menu */}
@@ -84,19 +73,7 @@ export function Navbar() {
             <SheetContent side="right" className="bg-background border-primary/20 p-0 sm:max-w-xs">
               <SheetHeader className="p-6 border-b border-primary/10">
                 <SheetTitle className="text-left">
-                  <div className="flex flex-col items-start leading-none">
-                    <div className="flex items-baseline">
-                      <span className="font-headline text-2xl tracking-tighter text-foreground">
-                        THE OSH
-                      </span>
-                      <span className="font-headline text-[8px] uppercase tracking-[0.3em] ml-2 text-primary border-l border-primary/20 pl-2">
-                        Atelier
-                      </span>
-                    </div>
-                    <span className="font-body italic text-xs text-foreground/60 -mt-0.5 ml-1">
-                      by Tinu
-                    </span>
-                  </div>
+                  <Logo />
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-6 space-y-6">
