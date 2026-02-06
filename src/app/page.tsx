@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useRef } from "react";
@@ -50,6 +49,10 @@ const services = [
     image: PlaceHolderImages.find(img => img.id === "saree-folding")?.imageUrl || "",
     link: "/services#folding"
   }
+];
+
+const brands = [
+  "CHANEL", "DIOR", "M·A·C", "ESTÉE LAUDER", "BOBBI BROWN", "GUCCI", "SABYASACHI", "CHARLOTTE TILBURY", "NARS", "GIVENCHY"
 ];
 
 export default function Home() {
@@ -145,8 +148,8 @@ export default function Home() {
     <div ref={containerRef}>
       <Navbar />
       <main>
-        {/* Hero Section with Video Background and Poster Fallback */}
-        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-foreground">
+        {/* Hero Section */}
+        <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-foreground">
           <video
             autoPlay
             muted
@@ -185,11 +188,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Artist Section - Lead by image */}
+        {/* Brand Scrolling Section */}
+        <section className="py-12 bg-white/10 border-b border-primary/5 overflow-hidden whitespace-nowrap">
+          <div className="flex pause-on-hover">
+            <div className="flex animate-marquee">
+              {brands.map((brand, i) => (
+                <span key={i} className="font-headline text-2xl md:text-3xl tracking-[0.3em] mx-12 text-foreground/30 hover:text-primary transition-colors cursor-default">
+                  {brand}
+                </span>
+              ))}
+            </div>
+            <div className="flex animate-marquee" aria-hidden="true">
+              {brands.map((brand, i) => (
+                <span key={`dup-${i}`} className="font-headline text-2xl md:text-3xl tracking-[0.3em] mx-12 text-foreground/30 hover:text-primary transition-colors cursor-default">
+                  {brand}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Artist Section */}
         <section className="artist-section py-24 md:py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Image Column - First */}
               <div className="relative order-1 artist-image">
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
@@ -205,7 +227,6 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Text Column */}
               <div className="space-y-8 order-2 artist-text">
                 <span className="font-headline text-primary tracking-[0.3em] text-sm uppercase">The Creative Visionary</span>
                 <h2 className="font-headline text-4xl md:text-6xl leading-tight uppercase">
@@ -301,3 +322,4 @@ export default function Home() {
     </div>
   );
 }
+
