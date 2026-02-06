@@ -44,6 +44,7 @@ const services = [
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(img => img.id === "hero-main");
+  const artistImage = PlaceHolderImages.find(img => img.id === "artist-tinu")?.imageUrl || "";
 
   return (
     <>
@@ -83,7 +84,7 @@ export default function Home() {
         {/* Brand Philosophy */}
         <section className="py-24 px-6 lg:px-12 bg-background">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="text-primary text-sm font-headline tracking-widest mb-4">The Atelier Philosophy</h2>
+            <h2 className="text-primary text-sm font-headline tracking-widest mb-4 uppercase">The Atelier Philosophy</h2>
             <h3 className="font-headline text-3xl md:text-5xl mb-8 leading-tight">Elevating Traditional Crafts through Modern Sophistication</h3>
             <p className="font-body text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
               The OSH Atelier is more than a beauty studio; it is a sanctuary of artistic expression. Led by Tinu's visionary approach, we celebrate the ritual of adornment, ensuring every client feels like a masterpiece.
@@ -91,8 +92,55 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Artist Section - Integrated from About page */}
+        <section className="py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="relative order-2 lg:order-1">
+                <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
+                  <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
+                    <Image
+                      src={artistImage}
+                      alt="Tinu - The Artist"
+                      fill
+                      className="object-cover scale-110"
+                      data-ai-hint="fashion portrait"
+                    />
+                  </div>
+                  <div className="absolute -inset-4 border border-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] -z-10 animate-[blob_12s_infinite_alternate-reverse]"></div>
+                </div>
+              </div>
+              
+              <div className="space-y-8 order-1 lg:order-2">
+                <span className="font-headline text-primary tracking-[0.3em] text-sm uppercase">The Creative Visionary</span>
+                <h2 className="font-headline text-4xl md:text-6xl leading-tight uppercase">
+                  MEET <span className="italic text-primary">TINU</span>
+                </h2>
+                <p className="font-body text-2xl text-foreground/70 italic leading-relaxed">
+                  "Artistry is not just my profession; it's the lens through which I see the world."
+                </p>
+                <div className="space-y-4 font-body text-lg text-foreground/60 leading-relaxed">
+                  <p>
+                    With over a decade of experience in high-fashion and bridal couture, Tinu has established herself as a visionary who bridges the gap between traditional heritage and modern minimalism.
+                  </p>
+                  <p>
+                    Every creation at The OSH Atelier is personally overseen by Tinu, ensuring that luxury is felt in every detail.
+                  </p>
+                </div>
+                <div className="pt-4 flex items-center space-x-6">
+                  <Button asChild className="bg-foreground text-background font-headline tracking-widest px-8 py-6 uppercase hover:bg-accent transition-colors">
+                    <Link href="/about">Discover Her Story</Link>
+                  </Button>
+                  <div className="h-px w-12 bg-primary/40"></div>
+                  <span className="font-headline text-xs tracking-widest uppercase text-foreground/40">Founder & Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Showcase */}
-        <section className="py-24 bg-white/50">
+        <section className="py-24 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
@@ -107,7 +155,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service) => (
                 <Link key={service.id} href={service.link} className="group flex flex-col">
-                  <div className="relative aspect-[3/4] overflow-hidden mb-6 rounded-sm">
+                  <div className="relative aspect-[3/4] overflow-hidden mb-6 rounded-sm shadow-md">
                     <Image
                       src={service.image}
                       alt={service.title}
