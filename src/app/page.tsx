@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef } from "react";
@@ -73,6 +74,7 @@ export default function Home() {
       y: 50,
       opacity: 0,
       duration: 1,
+      stagger: 0.2,
       ease: "power3.out",
     }, "-=0.8")
     .from(".hero-btns", {
@@ -149,7 +151,7 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-foreground">
+        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-start overflow-hidden bg-foreground px-6 lg:px-24">
           <video
             autoPlay
             muted
@@ -166,24 +168,27 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
           
-          <div className="relative z-10 text-center text-white px-6">
-            <h1 className="hero-title font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg">
+          <div className="relative z-10 text-left text-white max-w-4xl">
+            <span className="hero-subtitle block font-headline text-primary tracking-[0.3em] text-sm md:text-base uppercase mb-4">
+              Bespoke Artistry & Luxury Design
+            </span>
+            <h1 className="hero-title font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.1em] mb-6 drop-shadow-lg leading-tight">
               THE OSH <span className="text-primary italic">ATELIER</span>
             </h1>
-            <p className="hero-subtitle font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12">
-              Where Artistry Meets Elegance. By Tinu.
+            <p className="hero-subtitle font-body text-lg md:text-2xl lg:text-3xl max-w-2xl italic opacity-90 mb-8">
+              Expertly curated beauty. From master-level bridal makeup and bespoke couture design to the ancient art of precision saree draping and archival preservation.
             </p>
-            <div className="hero-btns flex flex-col sm:flex-row gap-6 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-10 h-14">
+            <div className="hero-btns flex flex-col sm:flex-row gap-6 justify-start">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-10 h-14 rounded-full transition-transform hover:scale-105">
                 <Link href="/booking">Book Experience</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-foreground font-headline tracking-widest px-10 h-14 bg-transparent">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-foreground font-headline tracking-widest px-10 h-14 bg-transparent rounded-full transition-transform hover:scale-105">
                 <Link href="/portfolio">View Portfolio</Link>
               </Button>
             </div>
           </div>
           
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block z-10">
+          <div className="absolute bottom-10 left-24 animate-bounce hidden md:block z-10">
             <div className="w-[1px] h-20 bg-primary/60"></div>
           </div>
         </section>
@@ -244,7 +249,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="pt-4 flex items-center space-x-6">
-                  <Button asChild className="bg-foreground text-background font-headline tracking-widest px-8 py-6 uppercase hover:bg-accent transition-colors">
+                  <Button asChild className="bg-foreground text-background font-headline tracking-widest px-8 py-6 uppercase hover:bg-accent transition-colors rounded-full">
                     <Link href="/about">Discover Her Story</Link>
                   </Button>
                   <div className="h-px w-12 bg-primary/40"></div>
@@ -312,7 +317,7 @@ export default function Home() {
             <p className="font-body text-xl text-background/80 mb-12 italic">
               Experience the exclusivity of the OSH Atelier. Private consultations available.
             </p>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-12 h-16 text-lg">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-12 h-16 text-lg rounded-full">
               <Link href="/booking">Reserve Your Session</Link>
             </Button>
           </div>
@@ -322,4 +327,3 @@ export default function Home() {
     </div>
   );
 }
-
