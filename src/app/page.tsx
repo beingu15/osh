@@ -151,7 +151,7 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[90vh] md:h-screen w-full flex items-center justify-start overflow-hidden bg-foreground px-6 lg:px-24">
+        <section className="relative h-[90vh] md:h-screen w-full flex items-end md:items-center justify-start overflow-hidden bg-foreground px-6 lg:px-24 pb-16 md:pb-0">
           <video
             autoPlay
             muted
@@ -218,7 +218,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-1 artist-image">
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
+                <div className="relative aspect-[4/5] w-full max-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
                     <Image
                       src={artistImage}
