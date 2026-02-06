@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[70vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
+        <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
           <Image
             src={heroImage?.imageUrl || "https://picsum.photos/seed/osh1/1920/1080"}
             alt="The OSH Atelier"
@@ -81,11 +81,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Artist Section - Positioned early for impact with image leading the layout */}
+        {/* Artist Section - Lead by image */}
         <section className="py-24 md:py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Image Column - Always first for start-of-section priority */}
+              {/* Image Column - First */}
               <div className="relative order-1">
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
