@@ -75,7 +75,7 @@ export default function Booking() {
                 <MapPin className="h-6 w-6 text-primary shrink-0" />
                 <div>
                   <h3 className="font-headline text-lg uppercase tracking-wider mb-2">Location</h3>
-                  <p className="font-body text-foreground/60">123 Couture Avenue, Fashion District<br />Private Parking Available</p>
+                  <p className="font-body text-foreground/60">Angamaly, Kerala<br />Private Parking Available</p>
                 </div>
               </div>
             </div>

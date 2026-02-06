@@ -35,7 +35,7 @@ export function Footer() {
           <ul className="space-y-4 font-body text-lg text-background/70">
             <li className="flex items-start space-x-3">
               <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
-              <span>123 Couture Avenue, Fashion District</span>
+              <span>Angamaly, Kerala</span>
             </li>
             <li className="flex items-center space-x-3">
               <Phone className="h-5 w-5 text-primary shrink-0" />
