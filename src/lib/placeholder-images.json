@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-main",
+      "description": "Luxury makeup atelier atmosphere",
+      "imageUrl": "https://images.unsplash.com/photo-1591375372245-6d76eb0531cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsdXh1cnklMjBtYWtldXB8ZW58MHx8fHwxNzcwMzgzOTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury makeup"
+    },
+    {
+      "id": "makeup-service",
+      "description": "Professional high-glam makeup application",
+      "imageUrl": "https://images.unsplash.com/photo-1730385781473-aa8637f84703?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmFzaGlvbiUyMGJlYXV0eXxlbnwwfHx8fDE3NzAzODM5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion beauty"
+    },
+    {
+      "id": "costume-service",
+      "description": "Custom outfit design and fabrics",
+      "imageUrl": "https://images.unsplash.com/photo-1581343109266-bd1554db3e88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb3N0dW1lJTIwZGVzaWdufGVufDB8fHx8MTc3MDM4Mzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "costume design"
+    },
+    {
+      "id": "saree-draping",
+      "description": "Elegant saree draping on a model",
+      "imageUrl": "https://images.unsplash.com/photo-1756483482418-3f3e4c13f9b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYXJlZSUyMGZhc2hpb258ZW58MHx8fHwxNzcwMjk2NDM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "saree fashion"
+    },
+    {
+      "id": "saree-folding",
+      "description": "Perfectly folded sarees in a boutique",
+      "imageUrl": "https://images.unsplash.com/photo-1760287364328-e30221615f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZXh0aWxlJTIwYm91dGlxdWV8ZW58MHx8fHwxNzcwMzgzOTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "textile boutique"
+    },
+    {
+      "id": "portfolio-1",
+      "description": "Bridal makeup look",
+      "imageUrl": "https://images.unsplash.com/photo-1684868265715-03e19a3e0e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxicmlkYWwlMjBtYWtldXB8ZW58MHx8fHwxNzcwMzM0OTg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bridal makeup"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Couture gown detail",
+      "imageUrl": "https://images.unsplash.com/photo-1761164920874-555955ee3c0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3V0dXJlJTIwZGV0YWlsfGVufDB8fHx8MTc3MDM4Mzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couture detail"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Editorial fashion makeup",
+      "imageUrl": "https://images.unsplash.com/photo-1648921905009-c53a806e13be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlZGl0b3JpYWwlMjBtYWtldXB8ZW58MHx8fHwxNzcwMzgzOTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "editorial makeup"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Traditional saree draping",
+      "imageUrl": "https://images.unsplash.com/photo-1761125135351-268e72e39158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmFkaXRpb25hbCUyMHNhcmVlfGVufDB8fHx8MTc3MDM4Mzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "traditional saree"
+    },
+    {
+      "id": "blog-1",
+      "description": "Behind the scenes at a fashion shoot",
+      "imageUrl": "https://images.unsplash.com/photo-1745152049794-6d797afcdada?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXNoaW9uJTIwcGhvdG9zaG9vdHxlbnwwfHx8fDE3NzAzODM5NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion photoshoot"
+    }
+  ]
 }
