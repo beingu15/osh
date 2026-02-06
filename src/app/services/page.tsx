@@ -57,7 +57,7 @@ export default function Services() {
 
         <section className="px-6 lg:px-12 space-y-32 max-w-7xl mx-auto">
           {serviceCategories.map((service, index) => (
-            <div key={service.slug} className={`flex flex-col lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24`}>
+            <div key={service.slug} id={service.slug} className={`flex flex-col lg:items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-24 scroll-mt-32`}>
               <div className="flex-1 relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
                 <Image
                   src={service.image}

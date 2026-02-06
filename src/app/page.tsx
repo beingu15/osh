@@ -14,7 +14,7 @@ const services = [
     description: "From bridal elegance to high-fashion editorial, we craft looks that tell your unique story.",
     icon: Sparkles,
     image: PlaceHolderImages.find(img => img.id === "makeup-service")?.imageUrl || "",
-    link: "/services/makeup"
+    link: "/services#makeup"
   },
   {
     id: "outfit",
@@ -22,7 +22,7 @@ const services = [
     description: "Bespoke costume design that marries traditional silhouettes with contemporary luxury.",
     icon: Scissors,
     image: PlaceHolderImages.find(img => img.id === "costume-service")?.imageUrl || "",
-    link: "/services/outfit"
+    link: "/services#outfit"
   },
   {
     id: "draping",
@@ -30,7 +30,7 @@ const services = [
     description: "Masterful draping techniques for an impeccable, regal appearance on your most special occasions.",
     icon: Wind,
     image: PlaceHolderImages.find(img => img.id === "saree-draping")?.imageUrl || "",
-    link: "/services/draping"
+    link: "/services#draping"
   },
   {
     id: "folding",
@@ -38,7 +38,7 @@ const services = [
     description: "Preserve and present your heirloom sarees with our professional archival folding service.",
     icon: Layers,
     image: PlaceHolderImages.find(img => img.id === "saree-folding")?.imageUrl || "",
-    link: "/services/folding"
+    link: "/services#folding"
   }
 ];
 
