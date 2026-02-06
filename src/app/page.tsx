@@ -51,7 +51,7 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <section className="relative h-[70vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
           <Image
             src={heroImage?.imageUrl || "https://picsum.photos/seed/osh1/1920/1080"}
             alt="The OSH Atelier"
@@ -61,10 +61,10 @@ export default function Home() {
             data-ai-hint="luxury makeup"
           />
           <div className="relative z-10 text-center text-white px-6">
-            <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg">
+            <h1 className="font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg">
               THE OSH <span className="text-primary italic">ATELIER</span>
             </h1>
-            <p className="font-body text-xl md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12">
+            <p className="font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12">
               Where Artistry Meets Elegance. By Tinu.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -76,13 +76,13 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
             <div className="w-[1px] h-20 bg-primary/60"></div>
           </div>
         </section>
 
         {/* Artist Section - Positioned early for impact with image leading the layout */}
-        <section className="py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
+        <section className="py-24 md:py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Image Column - Always first for start-of-section priority */}
