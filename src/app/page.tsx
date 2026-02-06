@@ -1,4 +1,7 @@
 
+"use client";
+
+import { useRef } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +9,13 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, Scissors, Wind, Layers, ArrowRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const services = [
   {
@@ -43,10 +53,95 @@ const services = [
 ];
 
 export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const artistImage = PlaceHolderImages.find(img => img.id === "artist-tinu")?.imageUrl || "";
 
+  useGSAP(() => {
+    // Hero Animations
+    const tl = gsap.timeline();
+    tl.from(".hero-title", {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power4.out",
+    })
+    .from(".hero-subtitle", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    }, "-=0.8")
+    .from(".hero-btns", {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    }, "-=0.6");
+
+    // Artist Section Scroll Animation
+    gsap.from(".artist-image", {
+      scrollTrigger: {
+        trigger: ".artist-section",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1,
+      },
+      scale: 0.8,
+      opacity: 0,
+      duration: 1.5,
+    });
+
+    gsap.from(".artist-text", {
+      scrollTrigger: {
+        trigger: ".artist-section",
+        start: "top 80%",
+      },
+      x: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    });
+
+    // Philosophy Section
+    gsap.from(".philosophy-content", {
+      scrollTrigger: {
+        trigger: ".philosophy-section",
+        start: "top 85%",
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    // Services Stagger
+    gsap.from(".service-card", {
+      scrollTrigger: {
+        trigger: ".services-section",
+        start: "top 80%",
+      },
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "back.out(1.7)",
+    });
+
+    // CTA Banner
+    gsap.from(".cta-content", {
+      scrollTrigger: {
+        trigger: ".cta-section",
+        start: "top 90%",
+      },
+      scale: 0.95,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.inOut",
+    });
+  }, { scope: containerRef });
+
   return (
-    <>
+    <div ref={containerRef}>
       <Navbar />
       <main>
         {/* Hero Section with Video Background */}
@@ -66,13 +161,13 @@ export default function Home() {
           </video>
           
           <div className="relative z-10 text-center text-white px-6">
-            <h1 className="font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <h1 className="hero-title font-headline text-4xl md:text-7xl lg:text-8xl tracking-[0.2em] mb-6 drop-shadow-lg">
               THE OSH <span className="text-primary italic">ATELIER</span>
             </h1>
-            <p className="font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+            <p className="hero-subtitle font-body text-lg md:text-2xl lg:text-3xl max-w-2xl mx-auto italic opacity-90 mb-12">
               Where Artistry Meets Elegance. By Tinu.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+            <div className="hero-btns flex flex-col sm:flex-row gap-6 justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-headline tracking-widest px-10 h-14">
                 <Link href="/booking">Book Experience</Link>
               </Button>
@@ -88,11 +183,11 @@ export default function Home() {
         </section>
 
         {/* Artist Section - Lead by image */}
-        <section className="py-24 md:py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
+        <section className="artist-section py-24 md:py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Image Column - First */}
-              <div className="relative order-1">
+              <div className="relative order-1 artist-image">
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
                     <Image
@@ -108,7 +203,7 @@ export default function Home() {
               </div>
               
               {/* Text Column */}
-              <div className="space-y-8 order-2">
+              <div className="space-y-8 order-2 artist-text">
                 <span className="font-headline text-primary tracking-[0.3em] text-sm uppercase">The Creative Visionary</span>
                 <h2 className="font-headline text-4xl md:text-6xl leading-tight uppercase">
                   MEET <span className="italic text-primary">TINU</span>
@@ -137,8 +232,8 @@ export default function Home() {
         </section>
 
         {/* Brand Philosophy */}
-        <section className="py-24 px-6 lg:px-12 bg-background">
-          <div className="max-w-5xl mx-auto text-center">
+        <section className="philosophy-section py-24 px-6 lg:px-12 bg-background">
+          <div className="philosophy-content max-w-5xl mx-auto text-center">
             <h2 className="text-primary text-sm font-headline tracking-widest mb-4 uppercase">The Atelier Philosophy</h2>
             <h3 className="font-headline text-3xl md:text-5xl mb-8 leading-tight">Elevating Traditional Crafts through Modern Sophistication</h3>
             <p className="font-body text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
@@ -148,7 +243,7 @@ export default function Home() {
         </section>
 
         {/* Services Showcase */}
-        <section className="py-24 bg-background">
+        <section className="services-section py-24 bg-background">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
@@ -162,7 +257,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service) => (
-                <Link key={service.id} href={service.link} className="group flex flex-col">
+                <Link key={service.id} href={service.link} className="service-card group flex flex-col">
                   <div className="relative aspect-[3/4] overflow-hidden mb-6 rounded-sm shadow-md">
                     <Image
                       src={service.image}
@@ -186,9 +281,9 @@ export default function Home() {
         </section>
 
         {/* CTA Banner */}
-        <section className="relative py-32 px-6 overflow-hidden">
+        <section className="cta-section relative py-32 px-6 overflow-hidden">
           <div className="absolute inset-0 bg-accent z-0"></div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="cta-content max-w-4xl mx-auto text-center relative z-10">
             <h2 className="font-headline text-4xl md:text-6xl text-background mb-8 leading-tight">Ready for your Transformation?</h2>
             <p className="font-body text-xl text-background/80 mb-12 italic">
               Experience the exclusivity of the OSH Atelier. Private consultations available.
@@ -200,6 +295,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
