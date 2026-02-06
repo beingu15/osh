@@ -96,7 +96,8 @@ export default function Home() {
         <section className="py-32 px-6 lg:px-12 bg-white/30 border-y border-primary/10 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative order-2 lg:order-1">
+              {/* Image Column - Now first for all breakpoints */}
+              <div className="relative">
                 <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                   <div className="absolute inset-0 bg-primary/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-[blob_10s_infinite_alternate] overflow-hidden">
                     <Image
@@ -111,7 +112,8 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="space-y-8 order-1 lg:order-2">
+              {/* Text Column */}
+              <div className="space-y-8">
                 <span className="font-headline text-primary tracking-[0.3em] text-sm uppercase">The Creative Visionary</span>
                 <h2 className="font-headline text-4xl md:text-6xl leading-tight uppercase">
                   MEET <span className="italic text-primary">TINU</span>
